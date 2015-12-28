@@ -12,7 +12,9 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add directory="classes" />
 				</Compiler>
 				<Linker>
 					<Add library="/usr/lib/liballegro_dialog.so" />
@@ -36,6 +38,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="classes" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -47,9 +50,11 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="classes/CApplication.cpp" />
-		<Unit filename="classes/CApplication.hpp" />
+		<Unit filename="classes/CApplication.h" />
 		<Unit filename="classes/CImage.cpp" />
-		<Unit filename="classes/CImage.hpp" />
+		<Unit filename="classes/CImage.h" />
+		<Unit filename="classes/cdice.cpp" />
+		<Unit filename="classes/cdice.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

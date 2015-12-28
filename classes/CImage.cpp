@@ -1,4 +1,4 @@
-#include "CImage.hpp"
+#include "CImage.h"
 
 /**
  * Constructor de la clase. Asume que ya hemos realizado las llamadas pertinentes
