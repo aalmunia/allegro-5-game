@@ -5,6 +5,7 @@
 		<Option title="TilesRendering" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="classes/;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/TilesRendering" prefix_auto="1" extension_auto="1" />
@@ -49,12 +50,19 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="CBaseControl.cpp">
+			<Option virtualFolder="classes/" />
+		</Unit>
 		<Unit filename="classes/CApplication.cpp" />
 		<Unit filename="classes/CApplication.h" />
+		<Unit filename="classes/CBaseControl.cpp" />
+		<Unit filename="classes/CBaseControl.h" />
+		<Unit filename="classes/CDice.cpp" />
+		<Unit filename="classes/CDice.h" />
 		<Unit filename="classes/CImage.cpp" />
 		<Unit filename="classes/CImage.h" />
-		<Unit filename="classes/cdice.cpp" />
-		<Unit filename="classes/cdice.h" />
+		<Unit filename="classes/iAppEventHandler.h" />
+		<Unit filename="docs/Controls.txt" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

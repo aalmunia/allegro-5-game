@@ -3,13 +3,14 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/keyboard.h>
 #include <allegro5/keycodes.h>
-#include "iappeventhandler.h"
+#include "iAppEventHandler.h"
 
 class CApplication : public IAppEventHandler {
     public:
         CApplication();
         ~CApplication();
         void closeApplication();
+        void setWindowTitle(std::string sTitle);
         void setWindowDimensions(int iWidth, int iHeight);
         void setWindowBackgroundColor(unsigned char iRed, unsigned char iGreen, unsigned char iBlue);
         void setWindowBackgroundColor(unsigned char iRed, unsigned char iGreen, unsigned char iBlue, unsigned char iAlpha);

@@ -1,0 +1,9 @@
+La idea es crear una librería de controles. Empezaremos usando un solo control, el control "BOTÓN".
+
+Responde a los siguientes eventos:
+
+Click (todos)
+Hover (todos)
+
+Y deberíamos poder crear varios botones, y usarlos independientemente.
+Deberíamos tener una estructura de datos en la que asociar los controles a la aplicación en si.

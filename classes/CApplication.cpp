@@ -8,6 +8,10 @@ CApplication::~CApplication() {
 
 }
 
+void CApplication::setWindowTitle(std::string sTitle) {
+    al_set_window_title(this->_pDisplay, sTitle.c_str());
+}
+
 void CApplication::setWindowDimensions(int iWidth, int iHeight) {
     this->_iWindowWidth = iWidth;
     this->_iWindowHeight = iHeight;
@@ -84,7 +88,7 @@ bool CApplication::mainLoop() {
                 break;
 
                 case ALLEGRO_EVENT_DISPLAY_RESIZE:
-                    std::cout << "Se ha producido un evento de reescalado" << std::endl;
+                    // std::cout << "Se ha producido un evento de reescalado" << std::endl;
                     this->handleDisplayResizeEvent(event);
                 break;
 
@@ -102,6 +106,7 @@ bool CApplication::mainLoop() {
                 break;
             }
         }
+        // Deberíamos llamar a la función de dibujo antes de hacer el double buffering
         al_flip_display();
     }
     return bClose;
@@ -160,20 +165,20 @@ void CApplication::handleDisplayResizeEvent(ALLEGRO_EVENT oEvent) {
 }
 
 void CApplication::handleDisplayCloseEvent(ALLEGRO_EVENT oEvent, bool& bClose) {
-    std::cout << "Se ha pulsado el botón de cerrar la ventana" << std::endl;
+    // std::cout << "Se ha pulsado el botón de cerrar la ventana" << std::endl;
     al_destroy_display(this->_pDisplay);
     al_destroy_event_queue(this->_pEventQueue);
     bClose = true;
 }
 
 void CApplication::handleMouseEnterDisplayEvent(ALLEGRO_EVENT oEvent) {
-    std::cout << "Evento MOUSE_ENTER_DISPLAY" << std::endl;
+    /* std::cout << "Evento MOUSE_ENTER_DISPLAY" << std::endl;
     std::cout << "Posición X: " << oEvent.mouse.x << std::endl;
-    std::cout << "Posición Y: " << oEvent.mouse.y << std::endl;
+    std::cout << "Posición Y: " << oEvent.mouse.y << std::endl; */
 }
 
 void CApplication::handleMouseLeaveDisplayEvent(ALLEGRO_EVENT oEvent) {
-    std::cout << "Evento MOUSE_LEAVE_DISPLAY" << std::endl;
+    /* std::cout << "Evento MOUSE_LEAVE_DISPLAY" << std::endl;
     std::cout << "Posición X: " << oEvent.mouse.x << std::endl;
-    std::cout << "Posición Y: " << oEvent.mouse.y << std::endl;
+    std::cout << "Posición Y: " << oEvent.mouse.y << std::endl; */
 }
