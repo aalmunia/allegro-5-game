@@ -78,6 +78,9 @@ bool CApplication::mainLoop()
     {
         if(al_get_next_event(this->_pEventQueue, &event))
         {
+
+            std::cout << "Evento ID : " << event.type << std::endl;
+
             switch(event.type)
             {
 
@@ -124,16 +127,22 @@ bool CApplication::mainLoop()
                 break;
             }
 
-            for(int i = 0; i < this->_vecControls.size(); i++)
+            for(unsigned int i = 0; i < this->_vecControls.size(); i++)
             {
-                for(int j = 0; j < this->_vecControls[i]._vecSubscribedEvents.size(); j++)
+
+                std::cout << "Valor de i " << i << std::endl;
+
+                for(unsigned int j = 0; j < this->_vecControls[i]._vecSubscribedEvents.size(); j++)
                 {
-                    std::cout << "Control " << i << ", evento suscrito " << j << ", valor: " << this->_vecControls[i]._vecSubscribedEvents[j].type << std::endl;
+
+                    std::cout << "Valor de j " << j << std::endl;
+
+                    /* std::cout << "Control " << i << ", evento suscrito " << j << ", valor: " << this->_vecControls[i]._vecSubscribedEvents[j].type << std::endl;
 
                     if(this->_vecControls[i]._vecSubscribedEvents[j].type == event.type)
                     {
                         std::cout << "Los eventos coinciden" << std::endl;
-                    }
+                    } */
                 }
 
                 // Lo que tenemos que revisar es los eventos a los que está suscrito el control.
@@ -160,9 +169,7 @@ void CApplication::handleKeyDownEvent(ALLEGRO_EVENT oEvent)
     if(oEvent.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
         std::cout << "La tecla pulsada es el ESCAPE" << std::endl;
     } */
-
-
-
+    std::cout << "En handleKeyDownEvent" << std::endl;
 }
 
 void CApplication::handleKeyUpEvent(ALLEGRO_EVENT oEvent)

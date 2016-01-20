@@ -14,6 +14,7 @@ class CBaseControl
         unsigned int getXPosition();
         unsigned int getYPosition();
         virtual void handleEvent(ALLEGRO_EVENT oEventHandle) = 0;
+        ALLEGRO_EVENT getSubscribedEvent(unsigned int iControlIndex);
         std::vector<ALLEGRO_EVENT> _vecSubscribedEvents;
     protected:
         unsigned int _posX;

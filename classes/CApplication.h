@@ -30,6 +30,7 @@ class CApplication : public IAppEventHandler {
         void handleDisplaySwitchOutEvent(ALLEGRO_EVENT oEvent);
         void handleDisplaySwitchInEvent(ALLEGRO_EVENT oEvent);
         void addControl(CBaseControl* oControl);
+        std::vector<CBaseControl> getSuscribedEvents(ALLEGRO_EVENT oEvent);
     private:
         int _iWindowWidth = 0;
         int _iWindowHeight = 0;

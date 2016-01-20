@@ -24,3 +24,11 @@ unsigned int CBaseControl::getXPosition() {
 unsigned int CBaseControl::getYPosition() {
     return this->_posY;
 }
+
+ALLEGRO_EVENT CBaseControl::getSubscribedEvent(unsigned int iControlIndex) {
+    ALLEGRO_EVENT oEventReturn;
+    if(iControlIndex <= this->_vecSubscribedEvents.size()) {
+        oEventReturn = this->_vecSubscribedEvents[iControlIndex];
+    }
+    return oEventReturn;
+}
