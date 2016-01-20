@@ -4,6 +4,7 @@
 #include <allegro5/keyboard.h>
 #include <allegro5/keycodes.h>
 #include "iAppEventHandler.h"
+#include "CBaseControl.h"
 
 class CApplication : public IAppEventHandler {
     public:
@@ -28,10 +29,12 @@ class CApplication : public IAppEventHandler {
         void handleDisplayCloseEvent(ALLEGRO_EVENT oEvent, bool& bClose);
         void handleDisplaySwitchOutEvent(ALLEGRO_EVENT oEvent);
         void handleDisplaySwitchInEvent(ALLEGRO_EVENT oEvent);
+        void addControl(CBaseControl* oControl);
     private:
         int _iWindowWidth = 0;
         int _iWindowHeight = 0;
         bool _isYellow = true;
+        std::vector<CBaseControl> _vecControls;
         ALLEGRO_DISPLAY* _pDisplay = NULL;
         ALLEGRO_EVENT_QUEUE* _pEventQueue = NULL;
         ALLEGRO_COLOR _oColorBackground;

@@ -3,6 +3,7 @@
 #include "classes/CImage.h"
 #include "classes/CApplication.h"
 #include "classes/CDice.h"
+#include "classes/CButton.h"
 
 using namespace std;
 
@@ -14,6 +15,13 @@ int main()
     pMyApp->initApplication();
     pMyApp->setWindowTitle(sTitulo);
     pMyApp->mainLoop();
+
+    ALLEGRO_EVENT oEventSuscribe;
+    oEventSuscribe.type = ALLEGRO_EVENT_MOUSE_BUTTON_DOWN;
+
+    CButton *oButton = new CButton();
+    oButton->subscribeToEvent(oEventSuscribe);
+    oButton->handleEvent(oEventSuscribe);
 
     /* CDice *oDado = new CDice();
     CDice *oDado_2 = new CDice();

@@ -10,11 +10,14 @@ class CBaseControl
         CBaseControl();
         virtual ~CBaseControl();
         void subscribeToEvent(ALLEGRO_EVENT oEventSubscribe);
-
-    protected:
+        void setPosition(unsigned int iXPos, unsigned int iYPos);
+        unsigned int getXPosition();
+        unsigned int getYPosition();
+        virtual void handleEvent(ALLEGRO_EVENT oEventHandle) = 0;
         std::vector<ALLEGRO_EVENT> _vecSubscribedEvents;
-        int _posX;
-        int _posY;
+    protected:
+        unsigned int _posX;
+        unsigned int _posY;
     private:
 };
 

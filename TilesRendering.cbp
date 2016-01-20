@@ -50,13 +50,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="CBaseControl.cpp">
-			<Option virtualFolder="classes/" />
-		</Unit>
 		<Unit filename="classes/CApplication.cpp" />
 		<Unit filename="classes/CApplication.h" />
 		<Unit filename="classes/CBaseControl.cpp" />
 		<Unit filename="classes/CBaseControl.h" />
+		<Unit filename="classes/CButton.cpp" />
+		<Unit filename="classes/CButton.h" />
 		<Unit filename="classes/CDice.cpp" />
 		<Unit filename="classes/CDice.h" />
 		<Unit filename="classes/CImage.cpp" />
